@@ -4,7 +4,11 @@ window.SITE = {
   STORE_URL: "",
   EMAIL: "cook.devtools@gmail.com",
   // Google Form that collects uninstall feedback (set after the form is created): { action, reason, comment }
-  UNINSTALL_FORM: null,
+  UNINSTALL_FORM: {
+    action: "https://docs.google.com/forms/d/e/1FAIpQLScMx2Sj3dWlQswgKa0eFVNbCRFlzLN_5gCP9RmFRUBlAbgJPw/formResponse",
+    reason: "entry.691794727",
+    comment: "entry.860602023",
+  },
 };
 
 (function () {
