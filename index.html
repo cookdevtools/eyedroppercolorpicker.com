@@ -1,1 +1,103 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Eye Dropper Color Picker</title><meta name="robots" content="noindex"><style>body{font-family:system-ui,sans-serif;margin:0;min-height:100vh;display:grid;place-items:center;background:#f6f8fa;color:#1f2328}main{text-align:center;padding:2rem}h1{font-weight:600}</style></head><body><main><h1>Eye Dropper Color Picker</h1><p>Coming soon.</p></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Image Color Picker Online – Eye Dropper Color Picker</title>
+  <meta name="description" content="Free online image color picker and eye dropper: upload or paste an image, click any pixel and copy its HEX, RGB, HSL or HSB code. Extract a color palette from any photo. Or install the Chrome extension to pick colors from your whole screen.">
+  <link rel="canonical" href="https://eyedroppercolorpicker.com/">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/logo-256.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <meta property="og:title" content="Image Color Picker Online – Eye Dropper Color Picker">
+  <meta property="og:description" content="Pick any color from an image or from your screen and copy HEX, RGB, HSL, HSB.">
+  <meta property="og:image" content="https://eyedroppercolorpicker.com/assets/logo-256.png">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Eye Dropper Color Picker","applicationCategory":"DesignApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"url":"https://eyedroppercolorpicker.com/","description":"Online image color picker and Chrome eye dropper extension. Pick a color from any image or screen and copy HEX, RGB, HSL, HSB."}
+  </script>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Image Color Picker &amp; Eye Dropper</h1>
+        <p class="lead">Upload, drop or paste an image, then click any pixel to get its HEX, RGB, HSL or HSB code. The tool runs in your browser — images never leave your device.</p>
+      </div>
+    </section>
+
+    <section id="tool" style="padding-top:0">
+      <div class="wrap tool">
+        <div>
+          <div id="drop" class="drop" role="button" tabindex="0" aria-label="Upload an image">
+            <div id="dropHint" class="hint">
+              <p style="font-size:40px;margin:0 0 8px">🖼️</p>
+              <p><strong>Drop an image here</strong>, click to choose a file, or paste from the clipboard (Ctrl+V).</p>
+              <p class="muted" style="font-size:14px">PNG, JPG, WebP, GIF, SVG · processed locally</p>
+            </div>
+            <canvas id="canvas" hidden></canvas>
+            <div id="loupe" class="loupe"><canvas id="loupeCanvas" width="11" height="11"></canvas></div>
+          </div>
+          <input id="file" type="file" accept="image/*" hidden>
+          <p style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <button id="screenPick" class="btn btn-secondary btn-sm" type="button" hidden title="Uses your browser's built-in eyedropper">◎ Pick a color from the screen</button>
+            <button id="reset" class="btn btn-secondary btn-sm" type="button" hidden>Choose another image</button>
+          </p>
+        </div>
+        <aside id="result" class="result" hidden>
+          <div id="sw" class="sw"></div>
+          <div id="colorName" class="muted"></div>
+          <div id="codes" class="codes"></div>
+          <div id="paletteWrap" hidden>
+            <h3 style="margin-top:6px">Palette from this image</h3>
+            <div id="palette" class="swatches"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="card" style="display:grid;grid-template-columns:1fr;gap:20px;align-items:center">
+          <div>
+            <h2>Pick colors from any page or app — in one click</h2>
+            <p class="muted">The <strong>Eye Dropper Color Picker</strong> Chrome extension picks a color from anywhere on your screen: web pages, videos, PDFs, even other windows. The code is copied instantly in the format you choose.</p>
+            <p><a class="btn btn-primary" data-store-link href="#">Add to Chrome — it's free</a></p>
+            <p class="muted" style="font-size:14px;margin:0">No sign-up. No ads. No access to your browsing data — the only permission it asks for is storage for your color history.</p>
+          </div>
+          <picture>
+            <source srcset="/assets/popup-dark.png" media="(prefers-color-scheme: dark)">
+            <img src="/assets/popup-light.png" alt="Eye Dropper Color Picker popup showing a picked color, its HEX code, recent colors and a palette" width="320" loading="lazy" style="border-radius:12px;box-shadow:var(--shadow);max-width:320px;justify-self:center">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="center">Why people use it</h2>
+        <div class="grid-3">
+          <div class="feature"><h3><span class="ic">◎</span>One-click eye dropper</h3><p class="muted">Press <kbd>Alt</kbd>+<kbd>C</kbd>, then <kbd>Enter</kbd>, click a pixel — done. Works outside the browser window too, with a built-in magnifier.</p></div>
+          <div class="feature"><h3><span class="ic">#</span>Every format you need</h3><p class="muted">HEX, RGB, HSL, HSB, the nearest Tailwind class and a ready CSS variable. The code is copied automatically.</p></div>
+          <div class="feature"><h3><span class="ic">▦</span>History and palette</h3><p class="muted">The last 24 colors are kept; pin up to 12 to a palette and export it as CSS variables, JSON or a plain list.</p></div>
+          <div class="feature"><h3><span class="ic">✓</span>Reliable on any page</h3><p class="muted">Uses the browser's native eyedropper, so it works on retina screens, zoomed pages, images, videos and browser pages where older pickers fail.</p></div>
+          <div class="feature"><h3><span class="ic">🔒</span>Private by design</h3><p class="muted">No account, no tracking, no permission to read websites. Colors are stored only in your Chrome profile.</p></div>
+          <div class="feature"><h3><span class="ic">☾</span>Light and dark</h3><p class="muted">A small, fast popup that follows your system theme. No clutter, no upsells.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap narrow">
+        <h2>Frequently asked questions</h2>
+        <details><summary>How do I pick a color from an image online?</summary><p>Drop or paste the image into the tool above, move the mouse over it (the loupe shows exact pixels) and click. The HEX code is copied right away; RGB, HSL and HSB are one click away.</p></details>
+        <details><summary>What is the difference between HEX, RGB, HSL and HSB?</summary><p>They describe the same color in different notations. HEX and RGB are what CSS and most tools expect; HSL is handy for adjusting lightness in CSS; HSB (also called HSV) is the model used in Figma and Photoshop color panels.</p></details>
+        <details><summary>Is the image uploaded anywhere?</summary><p>No. Everything happens in your browser with the Canvas API. The page makes no network requests with your image.</p></details>
+        <details><summary>How is the extension different from this page?</summary><p>This page picks colors from an image you provide. The extension picks a color from anything visible on your screen — any website, video, app window — in one click, and keeps your history and palette.</p></details>
+        <details><summary>Which browsers are supported?</summary><p>The extension works in Google Chrome 95+ and other Chromium browsers (Edge, Brave, Opera, Vivaldi). The online tool works in any modern browser; the “pick from screen” button appears where the browser supports the EyeDropper API.</p></details>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/site.js"></script>
+  <script src="/assets/picker.js"></script>
+</body>
+</html>

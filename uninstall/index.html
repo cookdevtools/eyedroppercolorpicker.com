@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uninstalled – Eye Dropper Color Picker</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap narrow">
+        <h1>Eye Dropper Color Picker has been removed</h1>
+        <p class="lead">Sorry to see you go. Would you tell us why? It takes 5 seconds and helps us improve.</p>
+      </div>
+    </section>
+    <section style="padding-top:0">
+      <div class="wrap narrow">
+        <form id="form" class="card">
+          <div class="choices" role="radiogroup" aria-label="Why did you uninstall?">
+            <label><input type="radio" name="reason" value="It didn't work"> It didn't work</label>
+            <label><input type="radio" name="reason" value="Missing a feature"> Missing a feature</label>
+            <label><input type="radio" name="reason" value="Found a better tool"> Found a better tool</label>
+            <label><input type="radio" name="reason" value="Just cleaning up"> Just cleaning up</label>
+            <label><input type="radio" name="reason" value="Other"> Other</label>
+          </div>
+          <label for="comment" class="muted" style="display:block;margin-bottom:6px">Anything else? (optional)</label>
+          <textarea id="comment" name="comment" placeholder="What didn't work, or what was missing?"></textarea>
+          <p style="margin:14px 0 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="btn btn-primary" type="submit">Send</button>
+            <span class="muted" style="font-size:14px">Anonymous. No email required.</span>
+          </p>
+        </form>
+        <div id="thanks" class="card" hidden>
+          <h2>Thanks!</h2>
+          <p>If something didn't work, we'd love to fix it — <a href="mailto:cook.devtools@gmail.com">email us</a> with a short description. You can also <a data-store-link href="#">reinstall the extension</a> any time.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/site.js"></script>
+  <script>
+    // Submits to a Google Form (configured in site.js as SITE.UNINSTALL_FORM) through a hidden iframe,
+    // so the page never leaves and no cookies are involved. Without a configured form, it just thanks the user.
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const cfg = window.SITE.UNINSTALL_FORM;
+      const reason = (document.querySelector('input[name="reason"]:checked') || {}).value || "";
+      const comment = document.getElementById("comment").value.trim();
+      if (cfg && (reason || comment)) {
+        const f = document.createElement("form"); f.action = cfg.action; f.method = "POST"; f.target = "sink"; f.hidden = true;
+        const add = (n, v) => { const i = document.createElement("input"); i.name = n; i.value = v; f.appendChild(i); };
+        add(cfg.reason, reason); add(cfg.comment, comment);
+        const sink = document.createElement("iframe"); sink.name = "sink"; sink.hidden = true;
+        document.body.append(sink, f); f.submit();
+      }
+      document.getElementById("form").hidden = true; document.getElementById("thanks").hidden = false;
+    });
+  </script>
+</body>
+</html>

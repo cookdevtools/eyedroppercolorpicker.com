@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome – Eye Dropper Color Picker</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="wrap narrow">
+        <img src="/assets/logo-256.png" alt="" width="72" height="72" style="border-radius:18px;box-shadow:var(--shadow)">
+        <h1>Eye Dropper Color Picker is installed</h1>
+        <p class="lead">Pick any color on your screen in one click. Three quick steps to get started.</p>
+      </div>
+    </section>
+
+    <section style="padding-top:0">
+      <div class="wrap narrow steps">
+        <div class="step">
+          <div class="num"></div>
+          <div>
+            <h2>Pin the extension</h2>
+            <p>Click the puzzle icon <strong>➊</strong> in the Chrome toolbar, then the pin <strong>➋</strong> next to <strong>Eye Dropper Color Picker</strong>. The icon stays visible next to the address bar.</p>
+            <figure class="shot">
+              <img src="/assets/welcome-pin.png" alt="Chrome toolbar with the Extensions puzzle menu open and the pin icon next to Eye Dropper Color Picker highlighted" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Screenshot: Chrome toolbar → puzzle icon → pin'}))">
+            </figure>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num"></div>
+          <div>
+            <h2>Pick a color</h2>
+            <p>Click the icon <strong>➌</strong> (or press <kbd>Alt</kbd>+<kbd>C</kbd>), then press <kbd>Enter</kbd> or click <strong>Pick color</strong>. A magnifier appears — click any pixel: on a web page, in a video, or even outside the browser window.</p>
+            <figure class="shot">
+              <img src="/assets/welcome-pick.png" alt="The popup with the Pick color button and the magnifier over a web page" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'placeholder',textContent:'Screenshot: popup → Pick color → magnifier on a page'}))">
+            </figure>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="num"></div>
+          <div>
+            <h2>Copy in your format</h2>
+            <p>The code is copied automatically. Switch between <strong>HEX, RGB, HSL, HSB, Tailwind</strong> and a <strong>CSS variable</strong> — one click copies the selected format. Colors you pick are saved under <em>Recent</em>; pin your favorites to the <em>Palette</em> and export it when you need it.</p>
+            <figure class="shot">
+              <picture>
+                <source srcset="/assets/popup-dark.png" media="(prefers-color-scheme: dark)">
+                <img src="/assets/popup-light.png" alt="Popup showing a picked color with format tabs, recent colors and palette" style="max-width:320px;margin:0 auto">
+              </picture>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap narrow">
+        <div class="card">
+          <h3>Tips</h3>
+          <ul class="muted" style="margin:0;padding-left:20px">
+            <li><kbd>Alt</kbd>+<kbd>C</kbd> opens the picker; <kbd>Enter</kbd> or <kbd>Space</kbd> starts picking; <kbd>Esc</kbd> cancels. You can change the shortcut at <code>chrome://extensions/shortcuts</code>.</li>
+            <li>Need several colors in a row? After each pick the button keeps focus — just press <kbd>Enter</kbd> again.</li>
+            <li>Picking from a video? Pause it on the right frame first.</li>
+            <li>Want to pick a color from an image file? Use the <a href="/">online image color picker</a>.</li>
+          </ul>
+        </div>
+        <p class="muted center" style="margin-top:24px">Questions or ideas? <a href="/feedback/">Send feedback</a> · <a href="/privacy/">Privacy policy</a> — the extension doesn't collect any data.</p>
+      </div>
+    </section>
+  </main>
+  <script src="/assets/site.js"></script>
+</body>
+</html>
