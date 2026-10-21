@@ -14,20 +14,21 @@
     <section class="hero" style="text-align:left">
       <div class="wrap narrow">
         <h1>Privacy Policy</h1>
-        <p class="muted">Last updated: October 17, 2026</p>
+        <p class="muted">Last updated: October 22, 2026</p>
       </div>
     </section>
     <section style="padding-top:0">
       <div class="wrap narrow">
         <h2>Summary</h2>
-        <p><strong>The Eye Dropper Color Picker extension does not collect, store, transmit or sell any personal data.</strong> It has no analytics, no accounts and no servers. The only permission it requests is <code>storage</code>, used to keep your color history, palette and settings in your own Chrome profile.</p>
+        <p><strong>The Eye Dropper Color Picker extension does not collect, store, transmit or sell any personal data.</strong> It has no analytics, no accounts and no servers. It requests three permissions: <code>storage</code> (your color history, palette and settings in your own Chrome profile), and <code>activeTab</code> + <code>scripting</code>, used only by the Precision picker to take a one-time snapshot of the tab you are looking at, on your click. Nothing ever leaves your device.</p>
 
         <h2>The extension</h2>
         <ul>
-          <li><strong>What it does:</strong> when you click <em>Pick color</em>, it uses the browser's built-in EyeDropper API to read the color of the pixel you click. It never captures screenshots, never reads page content and has no access to the websites you visit.</li>
-          <li><strong>What it stores:</strong> the colors you picked (up to 24 recent and 12 pinned), your preferred format and settings. This data lives in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own devices if you are signed into Chrome. We cannot access it.</li>
+          <li><strong>Pick color:</strong> uses the browser's built-in EyeDropper API to read the color of the pixel you click. It does not capture screenshots and does not read page content.</li>
+          <li><strong>Precision picker:</strong> when you click <em>Precision</em> (or press <kbd>Shift</kbd>+<kbd>Space</kbd>), the extension takes a single snapshot of the visible part of the current tab, shows it to you with a magnifier so you can choose a pixel, and discards it as soon as you pick a color or press <kbd>Esc</kbd>. The snapshot stays in the memory of that tab only: it is never saved, never sent anywhere and never read by us. Access to the tab is granted by Chrome only for the tab you clicked in and only for that moment; the extension has no access to the websites you visit at any other time.</li>
+          <li><strong>What it stores:</strong> the colors you picked (up to 24 recent and 48 pinned), your preferred format, theme and settings. This data lives in <code>chrome.storage.sync</code>, which Chrome may synchronize between your own devices if you are signed into Chrome. We cannot access it.</li>
           <li><strong>What it sends:</strong> nothing. The extension makes no network requests. The only two pages it opens are this website's Welcome page (once, after installation) and the Uninstall page (when you remove it), as standard browser tabs.</li>
-          <li><strong>Permissions:</strong> <code>storage</code> only. No host permissions, no tabs, no clipboard-read permission. Copying to the clipboard happens only when you click or press a key.</li>
+          <li><strong>Permissions:</strong> <code>storage</code>, <code>activeTab</code> and <code>scripting</code> (the last two only for the Precision picker, as described above). No host permissions, no <code>tabs</code>, no clipboard-read permission. Copying to the clipboard happens only when you click or press a key.</li>
         </ul>
 
         <h2>This website</h2>
